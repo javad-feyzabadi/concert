@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title%}Create Consert{% endblock %}
+{% block list%} Create Concert{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <div class="mainnorder">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="mylable">ConcertName:{{createview.name}}</p>
+                <p class="mylable">Singername:{{createview.singername}}</p>
+                <p class="mylable">Length:{{createview.length}}</p>
+            </div>
+            <div class="col-md-6">
+                 {{createview.poster}}
+            </div>
+        </div>
+    </div>
+<button  type="submit" class="btn btn-outline-primary" data-mdb-ripple-color="dark">Create Concert</button>
+</form>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title%}Login{% endblock %}
+{% block list%}ورود کاربران{% endblock %}
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+  <br>
+  <h2>LOGIN : </h2>
+  <p style="color: red;">{{username}} {{errormessage}}</p>
+    <div class="container">
+      <label for="username"><b>UserName :</b></label>
+      <input type="text" placeholder="Please Enter Username" name="username" required>
+  <br><br>
+      <label for="password"><b>Password :</b></label>
+      
+      <input type="password" placeholder="Please Enter Password" name="password" required>
+  <br>
+  <br>
+      <button class="btn btn-outline-primary" type="submit" data-mdb-ripple-color="dark" >Login</button>
+      
+
+    </div>
+  
+  </form> 
+{% endblock %}

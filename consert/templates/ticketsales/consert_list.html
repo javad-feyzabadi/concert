@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title%}Concert List{% endblock %}
+{% block list%} لیست کنسرت ها{% endblock %}
+{% block content %}
+
+<form action="" method="GET">
+    {{searchform}}
+    <button class="btn btn-outline-primary" type="submit" data-mdb-ripple-color="dark" >
+        Search</button> 
+    <!-- <button type="submit" class="btn btn-success"> search </button> -->
+</form>
+<br>
+<br>
+    {% for consert in consert %}
+    <div class="col-md-2">
+        <a href="{% url 'detail_list' consert.id %}">
+            <div class="imageBox">
+                <img src="{{ consert.poster.url }}">
+                {{consert}}
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+    
+<div>
+    <br>
+    <a class="btn btn-outline-primary" type="submit" href="{% url 'create' %}" data-mdb-ripple-color="dark">Create Concert </a>
+</div>
+{% endblock %}
+<!-- 
+ -->

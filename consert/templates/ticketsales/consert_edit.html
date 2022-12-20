@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title%}Edit Consert{% endblock %}
+{% block list%} ویرایش کنسرت ها{% endblock %}
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!-- {{consertform}} -->
+    <div class="mainborder">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="mylable">Name: {{consertform.name}} </p>
+                <p class="mylable">SingerName: {{consertform.singername}} </p>
+                <p class="mylable">Lenght: {{consertform.length}} </p>
+            </div>
+            <div class="col-md-6">
+                <div class="imageBox">
+                    <img src="{{poster.url}}">
+                </div>
+                {{consertform.poster}}
+
+            </div>
+        </div>
+    </div>
+    <div class="bottonborder">
+        <button class="btn btn-outline-primary" type="submit" data-mdb-ripple-color="dark" >Save</button>
+       <!--<a href=""><button  type="submit" class="btn btn-danger"> حذف </button></a> 
+       <a href=""><button type="submit" class="btn btn-info"> برگشت </button></a>--> 
+
+
+    </div>
+</form>
+    
+{% endblock %}

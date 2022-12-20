@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title%}Register{% endblock %}
+{% block list%}ثبت نام کاربران{% endblock %}
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<div class="mainnorder">
+    <div class="row">
+        <div class="col-md-6">
+            <p class="mylable">Name:{{formregister.first_name}}</p>
+            <p class="mylable">Family:{{formregister.last_name}}</p>
+            <p class="mylable">Gender:{{formregister.gender}}</p>
+            <p class="mylable">Credit:{{formregister.credit}}</p>
+        </div>
+        <div class="col-md-6">
+            <p class="mylable">Email:{{formregister.email}}</p>
+            <p class="mylable">UserName:{{formregister.username}}</p>
+            <p class="mylable">Password:{{formregister.password}}</p>
+            {{formregister.profileimage}}
+        </div>
+    </div>
+    
+</div>
+<button class="btn btn-outline-primary" type="submit" data-mdb-ripple-color="dark" >Register</button>
+
+</form>
+{% endblock %}

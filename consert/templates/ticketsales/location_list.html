@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title%} location list {% endblock %}
+{% block list%} لیست مکان های برگزاری کنسرت ها{% endblock %}
+{% block content %}
+            <div class="row locationHeader">
+                <div class="col-md-3">
+                    <h3>Concert Hall</h3>
+                </div>
+                <div class="col-md-9">
+                <h3>Address</h3>
+            </div>  
+            {% for location in location %}
+                <div class="row location">
+                    <div class="col-md-3">
+                        {{location.name}}
+                    </div>
+                    <div class="col-md-9">
+                        {{location.address}}
+                    </div>
+                </div>
+            {% endfor %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title%}Profile{% endblock %}
+{% block list%}پروفایل کاربران{% endblock %}
+{% block content %}
+
+<div class="row" style="margin-top: 20px;">
+
+    <div class="col-md-6">
+        <div>
+            <p class="border"> <span class="title">Full Name :</span> {{profile.user.get_full_name}}</p>
+            <p class="border"><span class="title">Gender :</span> {{profile.get_gender_display}}</p>
+            <p class="border"> <span class="title">Credit :</span> {{profile.credit}}</p>
+            <ul class="btnul">
+                <li><a href="{% url 'edit' %}" class="btn btn-primary"> Edit Profile</a></li>
+            </ul>
+        </div>
+    </div>
+    <br><br>
+    
+    <div class="col-md-3">
+            <img width="180px" height="180px" src="{{profile.profileimage.url}}">
+    </div>
+</div>
+{% endblock %}

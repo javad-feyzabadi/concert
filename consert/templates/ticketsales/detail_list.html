@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title%} Detail {% endblock %}
+{% block list%}جزییات {{detail.name}} {% endblock %}
+{% block content %}
+
+    <div class="col-md-10">
+        <h3> Concert Name : {{detail.name}}</h3>
+        <h3>Concert Singername : {{detail.singername}}</h3>
+        <h3> Concert Length  : {{detail.length}} Minutes</h3>
+
+    </div>
+    <div class="col-md-2">
+        <div class="imageBox">
+            <img src="{{detail.poster.url}}">
+        </div>
+        <a class="btn btn-outline-primary"  href="{% url 'edit' detail.id %}">Edit</a>
+        <a class="btn btn-outline-danger"  href="{% url 'delete' detail.id %}" >Delete</a>
+
+
+    </div>
+{% endblock %}
