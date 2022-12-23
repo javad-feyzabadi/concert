@@ -12,6 +12,9 @@ from django.shortcuts import redirect
 from django.contrib import messages
 from django.core.paginator import Paginator
 
+
+
+
 def ConsertListView(request):
     searchform = SearchForm(request.GET)
     if searchform.is_valid():
