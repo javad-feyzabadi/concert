@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from . forms import ConsertCreateForm, SearchForm,ConsertEditForm
-from django.views.generic.edit import CreateView,DeleteView
+from django.views.generic.edit import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
