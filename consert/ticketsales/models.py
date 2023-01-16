@@ -69,5 +69,5 @@ class TicketModel(models.Model):
     ticketimage = models.ImageField(upload_to = 'ticketimage/',verbose_name='عکس')
 
     def __str__(self):
-        return 'TicketInfo: Profile {} ConsertInfo: {}'.format(TimeModel.__str__)
+        return self.name
 
