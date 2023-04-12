@@ -27,7 +27,6 @@ class LocationModel(models.Model):
 
     def __str__(self):
         return self.name
-
 class TimeModel(models.Model):
     class Meta:
         verbose_name = 'زمان '
@@ -57,7 +56,6 @@ class TimeModel(models.Model):
         return datetime2jalali(self.startdatetime)
 
 
-
 class TicketModel(models.Model):
     class Meta:
         verbose_name = 'بلیط'
@@ -70,4 +68,3 @@ class TicketModel(models.Model):
 
     def __str__(self):
         return self.name
-
